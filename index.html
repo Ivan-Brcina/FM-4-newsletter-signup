@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <main id="main-container">
+      <div id="img-container">
+        <img
+          id="img-mobile"
+          src="assets/images/illustration-sign-up-mobile.svg"
+          alt="A bright orange image with windows and statistics" />
+        <img
+          id="img-desktop"
+          src="assets/images/illustration-sign-up-desktop.svg"
+          alt="A bright orange image with windows and statistics" />
+      </div>
+      <section id="content">
+        <h1 class="main-title">Stay updated!</h1>
+        <p id="paragraph-main">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="list">
+          <li class="list-item">
+            <img
+              class="checkmark"
+              src="assets/images/icon-list.svg"
+              alt="Check mark" />
+            <p class="list-paragraph">
+              Product discovery and building what matters
+            </p>
+          </li>
+          <li class="list-item">
+            <img
+              class="checkmark"
+              src="assets/images/icon-list.svg"
+              alt="Check mark" />
+            <p class="list-paragraph">
+              Measuring to ensure updates are a success
+            </p>
+          </li>
+          <li class="list-item">
+            <img
+              class="checkmark"
+              src="assets/images/icon-list.svg"
+              alt="Check mark" />
+            <p class="list-paragraph">And much more!</p>
+          </li>
+        </ul>
+        <form id="form">
+          <h3 id="field-heading">
+            <label id="label" for="email-box">Email address</label
+            ><span id="error-msg">Valid email required</span>
+          </h3>
+          <input id="email-box" type="text" placeholder="email@company.com" />
+          <button id="btn" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/Ivan-Brcina" target="_blank">Ivan Brčina</a>.
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
