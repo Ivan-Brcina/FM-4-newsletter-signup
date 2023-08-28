@@ -14,16 +14,16 @@
   --fw-400: 400;
 }
 
-/*@font-face {
+@font-face {
   font-family: "Roboto";
-  src: url(fonts\Roboto-Regular.ttf) format("truetype");
-}*/
+  src: url(fonts/Roboto-Regular.ttf) format("truetype");
+}
 
 /* Main */
 
 body {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   display: grid;
   grid-template: 1fr / 1fr;
@@ -31,10 +31,15 @@ body {
   place-items: center;
 }
 
-main {
+#main-container,
+#success-main {
   width: 100%;
   max-width: 375px;
   background-color: var(--c-neutral-white);
+}
+
+#success-main {
+  display: none;
 }
 
 #content {
@@ -83,6 +88,12 @@ p {
   align-items: center;
 }
 
+#user-email {
+  font-weight: bold;
+  word-wrap: break-word;
+  width: 100%;
+}
+
 #error-msg {
   display: none;
   color: var(--c-primary-tomato);
@@ -105,7 +116,7 @@ p {
   color: var(--c-primary-tomato);
 }
 
-#btn {
+.btn {
   border: none;
   background: var(--c-neutral-darkSlateGrey);
   color: var(--c-neutral-white);
@@ -114,14 +125,20 @@ p {
   border-radius: 8px;
 }
 
-#btn:hover {
+.btn:hover {
   background: linear-gradient(to right, #ff527b, #ff6a3a);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px -5px #ff6a3a;
 }
 
-/* Success Page */
+.btn:not(:hover) {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 var(--c-neutral-darkSlateGrey);
+  background: var(--c-neutral-darkSlateGrey);
+}
+
+/* Success Component */
 
 #success-container {
   margin: 100px 20px 0 20px;
@@ -143,7 +160,7 @@ p {
 
 @media screen and (min-width: 380px) {
   body {
-    background-color: var(--c-neutral-darkSlateGrey);
+    background-color: var(--c-neutral-charcoalGrey);
   }
 
   #main-container {
@@ -152,6 +169,11 @@ p {
     grid-template-columns: 1fr min-content;
     border: solid 15px white;
     border-radius: 30px;
+  }
+
+  #main-container,
+  #success-main {
+    box-shadow: 0 0 100px 5px var(--c-neutral-darkSlateGrey);
   }
 
   #img-mobile {
@@ -181,7 +203,7 @@ p {
 
   #success-main {
     min-width: 500px;
-    height: 520px;
+    min-height: 520px;
     border-radius: 30px;
   }
 
