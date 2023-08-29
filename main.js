@@ -4,6 +4,7 @@ const mainForm = document.getElementById("main-container");
 const mainSuccess = document.getElementById("success-main");
 const emailOutput = document.getElementById("user-email");
 const buttonDismiss = document.getElementById("btn-dismiss");
+const errorMsg = document.getElementById("error-msg");
 
 function validateEmail(email) {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -19,7 +20,8 @@ button.addEventListener("click", (e) => {
     email.value.length > 100
   ) {
     email.style.border = "solid 1px hsl(4, 100%, 67%)";
-    document.getElementById("error-msg").style.display = "inline-block";
+    email.style.color = "hsl(4, 100%, 67%)";
+    errorMsg.style.display = "inline-block";
   } else {
     let emailText = document.createTextNode(email.value);
     emailOutput.appendChild(emailText);
@@ -29,7 +31,15 @@ button.addEventListener("click", (e) => {
   }
 });
 
-// A button that clears the input field and resets the output information.
+// Resets the error colors if a user tried again.
+email.addEventListener("click", (e) => {
+  e.preventDefault();
+  email.style.border = "solid 1px lightgray";
+  email.style.color = "black";
+  errorMsg.style.display = "none";
+});
+
+// A button that clears the input field, resets the output information and switches back to the first component.
 buttonDismiss.addEventListener("click", (e) => {
   e.preventDefault();
   mainSuccess.style.display = "none";
